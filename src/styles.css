@@ -1,1 +1,258 @@
-/* You can add global styles to this file, and also import other style files */
+:root   {
+    --html-color: #e74c3c;
+    --css-color: #3498db;
+    --angular-color: #ff4d32;
+    --php-color: #9b59b6;
+}
+
+@font-face  {
+    font-family: ubuntu-light;
+    src: url('./assets/fonts/Ubuntu-Light.ttf');
+}
+
+@font-face  {
+    font-family: ubuntu-reg;
+    src: url('./assets/fonts/Ubuntu-Regular.ttf');
+}
+
+@font-face  {
+    font-family: ubuntu-bold;
+    src: url('./assets/fonts/Ubuntu-Bold.ttf');
+}
+
+html,body   {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    line-height: 150%;
+    background-color: #252525;
+    color: white;
+    font-family: ubuntu-reg;
+}
+
+h1, h2, h3, h4, h5, h6  {
+    font-family: ubuntu-bold;
+}
+
+pre    {
+    font-family: ubuntu-reg;
+    color: #252525;
+    white-space: normal;
+}
+
+code    {
+    color: #252525;
+    overflow: auto;
+    white-space: pre-wrap;
+    font-family: ubuntu-reg;
+}
+
+pre::before, pre::after, code::before, code::after  {
+    content: "";
+}
+
+/* 
+    Code headers
+*/
+
+.html-header    {
+    color: var(--html-color);
+}
+
+.css-header {
+    color: var(--css-color);
+}
+
+.angular-header {
+    color: var(--angular-color);
+}
+
+.php-header {
+    color: var(--php-color);
+}
+
+/* 
+    Box CSS
+*/
+.box    {
+    background-color: #252525;
+    height: 80px;
+    width: 80px;
+    border-bottom-right-radius: 3px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.box:hover  {
+    box-shadow: 0 0em 1em #000;
+}
+
+.box button {
+    z-index: 3;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    z-index: 3;
+    background-color: #fff;
+}
+
+button  {
+    border: none;
+}
+
+button:focus    {
+    outline: none;
+}
+
+/* 
+    Add snippet btn
+*/
+.add-snippet    {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; width: 60px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    background-color: #3998a4;
+}
+
+.add-snippet:hover  {
+    box-shadow: 1px 1px 0px px #171717;
+}
+
+/* 
+    Fold out menu
+*/
+
+.fold-out   {
+    position: absolute;
+    height: 100%;
+    perspective-origin: left;
+    perspective: 1000px;
+    z-index: 1;
+    top: 0; left: 0;
+}
+
+.fold-out ul    {
+    z-index: 10;
+    position: relative;
+    padding: 0;
+    list-style-type: none;
+    padding-top: 80px;
+    height: 100%;
+    width: 130px;
+    margin: 0;
+    -ms-overflow-style: none;
+    overflow-y: auto;
+}
+
+.fold-out ul::-webkit-scrollbar {
+    display: none;
+}
+
+.fold-out li    {
+    z-index: 10;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; width: 80px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 3rem;
+    transform: rotateX(180deg) rotateZ(0);
+    left: -80px;
+    backface-visibility: hidden;
+    transition: transform .7s ease, left .7s ease;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.fold-out li:hover  {
+    box-shadow: 2px 2px 1em #000;
+}
+
+.fold-out li a  {
+    color: #fff;
+}
+
+.fold-out li.activemenu {
+    left: 10px;
+    transform: rotateX(0) rotateZ(2deg) !important;
+    transition: transform .7s ease, left .7s ease;
+}
+
+.fold-out li:nth-child(1)   {
+    background-color: #3998a4;
+}
+
+.fold-out li:nth-child(2)    {
+    background-color: #e74c3c;
+    transition-delay: .2s;
+}
+
+.fold-out li:nth-child(3)   {
+    background-color: #3498db;
+    transition-delay: .4s;
+}
+
+.fold-out li:nth-child(4)   {
+    background-color: #ff4d32;
+    transition-delay: .6s;
+}
+
+.fold-out li:nth-child(5)   {
+    background-color: #9b59b6;
+    transition-delay: .8s;
+}
+
+.fold-out li:nth-child(6)   {
+    background-color: #3998a4;
+    transition-delay: 1s;
+}
+
+/* 
+    Snippet box
+*/
+
+.snippet    {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #34495e;
+    box-shadow: 4px 4px 0 0px #111;
+}
+.snippet-header {
+   padding: 10px;
+}
+
+.code-block {
+    padding: 20px;
+    background-color: #3998a4;
+    box-shadow: inset 5px 5px 25px -6px #002642;
+    border-radius: 5px;
+}
+
+.copy-btn   {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 40px; width: 40px;
+    padding: 5px;
+    color: #fff;
+    z-index: 5;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.copy-btn:hover  {
+    color: #252525;
+}
