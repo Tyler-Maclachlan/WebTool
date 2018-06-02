@@ -271,6 +271,7 @@ button:focus    {
     top: 0;
     right: 0;
     overflow: hidden;
+    background-color: #3998a4;
     transition: height .5s linear, width .5s linear;
 }
 
