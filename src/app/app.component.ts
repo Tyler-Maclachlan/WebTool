@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'app';
 
   open = false;
+  add = false;
 
   activateMenu()  {
     this.open = !this.open;
@@ -16,5 +17,9 @@ export class AppComponent {
 
   deactivateMenu()  {
     this.open = false;
+  }
+
+  showAddModal()  {
+    this.add = !this.add;
   }
 }

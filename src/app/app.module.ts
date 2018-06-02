@@ -2,9 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SnippetService } from './services/snippet.service';
 
 import { bootstrap } from 'bootstrap';
 import { jquery } from 'jquery';
@@ -31,9 +33,12 @@ import { PathNotFoundComponent } from './path-not-found/path-not-found.component
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ClipboardModule
+    ClipboardModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    SnippetService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

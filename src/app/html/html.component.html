@@ -1,10 +1,10 @@
 <div class="row justify-content-center">
 	<div class="col-10 col-md-6 mt-2 snippet" *ngFor="let snippet of snippets">
-		<div class="col-12 snippet-header">
+		<div class="col-12 snippet-header" *ngIf="snippet.isPublic == true">
 			<h2 class='html-header'>{{ snippet.title }}</h2>
 			<p>{{ snippet.author }} - {{ snippet.date }}</p>
 		</div>
-		<div class="col-12 code-block">
+		<div class="col-12 code-block" *ngIf="snippet.isPublic == true">
 			<button class='copy-btn' role="button" type="button" (click)="copyFunc('#code')">
 				<i class="far fa-copy"></i>
 			</button>

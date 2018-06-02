@@ -48,10 +48,6 @@ code    {
     font-family: ubuntu-reg;
 }
 
-pre::before, pre::after, code::before, code::after  {
-    content: "";
-}
-
 /* 
     Code headers
 */
@@ -106,26 +102,6 @@ button  {
 
 button:focus    {
     outline: none;
-}
-
-/* 
-    Add snippet btn
-*/
-.add-snippet    {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px; width: 60px;
-    border-radius: 50%;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: #fff;
-    background-color: #3998a4;
-}
-
-.add-snippet:hover  {
-    box-shadow: 1px 1px 0px px #171717;
 }
 
 /* 
@@ -255,4 +231,53 @@ button:focus    {
 
 .copy-btn:hover  {
     color: #252525;
+}
+
+/* 
+    Add snippet btn
+*/
+.add-snippet    {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; width: 60px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    background-color: #3998a4;
+    z-index: 10000;
+    transition: background-color .5s linear;
+    cursor: pointer;
+}
+
+.add-snippet:hover  {
+    box-shadow: 2px 2px 0px px #171717;
+}
+
+.active-add {
+    background-color: #252525 !important;
+    transition: background-color .5s linear;
+}
+/* 
+    Add Snippet CSS
+*/
+
+.mymodal    {
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    transition: height .5s linear, width .5s linear;
+}
+
+.active-modal   {
+    height: 100%;
+    width: 100%;
+    background-color: #3998a4;
+    z-index: 2000000;
+    transition: height .5s linear, width .5s linear;
 }
